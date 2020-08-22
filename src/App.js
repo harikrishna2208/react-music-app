@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Particles from "react-particles-js";
+import { MusicPlayerProvider } from "./components/MusicPlayerContext";
+import TrackList from "./components/TrackList";
+import PlayerControls from "./components/PlayerControls";
+import "./css/index.css";
+import "./css/App.css";
+/**/
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="fordiv">
+        <Particles className="particle-js" />
+      </div>
+      <MusicPlayerProvider>
+        <div className="container">
+          <TrackList />
+          <PlayerControls />
+        </div>
+      </MusicPlayerProvider>
+    </>
   );
 }
 
